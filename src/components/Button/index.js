@@ -1,10 +1,8 @@
 const Button = () => {
     return (
-        <>
+        <div className="Wrapper">
             <button>
-                <figure>
-                    <img src="/images/rock.svg" alt="" />
-                </figure>
+                <img src="/images/rock.svg" alt="" />
             </button>
             <button>
                 <img src="/images/sciss.svg" alt="" />
@@ -12,7 +10,7 @@ const Button = () => {
             <button>
                 <img src="/images/paper.svg" alt="" />
             </button>
-        </>
+        </div>
     )
 }
 
