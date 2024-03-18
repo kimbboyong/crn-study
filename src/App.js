@@ -1,24 +1,20 @@
-import Box from "./components/Box";
+import styled from 'styled-components';
+import Item from "./components/Item";
+
+
+const Wrapper = styled.div`
+  width:100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+`
 
 function App() {
-  const fakeDate = [
-    {
-      id: 0,
-      title: "You",
-    },
-    {
-      id: 1,
-      title: "Computer"
-    }
-  ]
 
   return (
-    <div className="Container">
-      <Box
-        fakeDate={fakeDate}
-        result={"결과"}
-      />
-    </div>
+    <Wrapper>
+      <Item />
+    </Wrapper>
   );
 }
 
