@@ -1,0 +1,52 @@
+.Wrapper {
+    margin-top: 200px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 3px 2px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
+.Title {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #333;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.Grid li {
+    width: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.Grid li:last-child {
+    border-right: none;
+}
+
+.gridTitle {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.Wrapper figure {
+    max-width: 150px;
+    margin: 0 auto 15px;
+}
+
+.Wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.Result {
+    font-size: 18px;
+    font-weight: 500;
+}
