@@ -1,6 +1,6 @@
 # 가위바위보 (react-rsp)
 
-<img src="/images/rsp.png">
+![](https://velog.velcdn.com/images/kimbboyong/post/9c151207-f8af-44d6-a270-00c6389d4918/image.png)
 
 ## UI
 - [X] 0.1 화면구성 : 2개의 박스형태 구성
