@@ -1,11 +1,14 @@
-import { GridTitle, Content, Result } from '../../style/StyledBox';
+import { GridTitle, Content, Result, Tie, Win, Lose } from '../../style/StyledBox';
 
-const Box = ({ title, item }) => {
-
-    console.log(item);
-
+const Box = ({ title, item, result }) => {
+    let ResultComponent = Tie;
+    if (result === 'win') {
+        ResultComponent = Win;
+    } else if (result === 'lose') {
+        ResultComponent = Lose;
+    }
     return (
-        <li>
+        <ResultComponent>
             <GridTitle>
                 {title}
             </GridTitle>
@@ -14,11 +17,11 @@ const Box = ({ title, item }) => {
                     <img src={item && item.img} alt="" />
                 </figure>
                 <Result>
-                    win
+                    {result}
                 </Result>
             </Content>
-        </li>
-    )
+        </ResultComponent>
+    );
 }
 
 export default Box;

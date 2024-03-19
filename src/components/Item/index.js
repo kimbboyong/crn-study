@@ -6,6 +6,9 @@ import Box from '../Box';
 const Item = () => {
 
     const [userSelect, setUserSelect] = useState(null);
+    const [computerSelect, setComputerSelect] = useState(null);
+    const [result, setResult] = useState('');
+    const [computerResult, setComputerResult] = useState('');
 
     const choice = {
         rock: {
@@ -24,15 +27,48 @@ const Item = () => {
 
     const play = (userChoice) => {
         setUserSelect(choice[userChoice]);
+        let computerChoice = randomChoice();
+        setComputerSelect(computerChoice);
+
+        const results = judgement(choice[userChoice], computerChoice);
+        setResult(results.userResult);
+        setComputerResult(results.computerResult);
     }
+
+    const randomChoice = () => {
+        let itemArray = Object.keys(choice);
+        let randomItem = Math.floor(Math.random() * itemArray.length);
+        let final = itemArray[randomItem];
+        return choice[final];
+    }
+
+    const judgement = (user, computer) => {
+        if (user.name === computer.name) {
+            return { userResult: 'tie', computerResult: 'tie' };
+        }
+
+        const rules = {
+            rock: 'sciss',
+            sciss: 'paper',
+            paper: 'rock',
+        };
+
+        if (rules[user.name] === computer.name) {
+            return { userResult: 'win', computerResult: 'lose' };
+        } else {
+            return { userResult: 'lose', computerResult: 'win' };
+        }
+    }
+
+
 
     return (
         <>
             <Wrapper>
                 <Title>가위바위보</Title>
                 <Grid>
-                    <Box title={"You"} item={userSelect} />
-                    <Box title={"Computer"} />
+                    <Box title={"You"} item={userSelect} result={result} />
+                    <Box title={"Computer"} item={computerSelect} result={computerResult} />
                 </Grid>
             </Wrapper>
 

@@ -15,7 +15,29 @@ export const Content = styled.div`
         }
     }
 `
-export const Result = styled.div`
+export const Result = styled.h2`
     font-size: 18px;
     font-weight: 500;
+`
+
+export const Win = styled.li`
+    h2 {
+        color: #0d6efd;
+    } 
+
+`
+
+export const Lose = styled.li`
+    h2 {
+        color: #dc3545;
+    }
+    img {
+        opacity: .5;
+    }
+`
+
+export const Tie = styled.li`
+    h2{
+        color: #333;
+    }
 `

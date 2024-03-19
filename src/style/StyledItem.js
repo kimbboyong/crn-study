@@ -23,11 +23,24 @@ export const Grid = styled.ul`
     padding: 15px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
     li {
         width: 100%;
         border-right: 1px solid #ccc;
         &:last-child {
             border-right: none;
+        }
+        @media screen and (max-width: 768px) {
+            border-right: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+                &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
         }
     }
 `
@@ -41,7 +54,7 @@ export const ButtonWraaper = styled.div`
 
 export const UserButton = styled.div`
     max-width: 100px;
-    height: 100px;
+    height: auto;
     background: #fff;
     box-shadow: 3px 2px 12px rgba(0, 0, 0, 0.3);
     border-radius: 12px;
