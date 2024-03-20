@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 `
 
 function App() {
-
   return (
     <Wrapper>
       <Item />

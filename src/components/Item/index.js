@@ -96,7 +96,6 @@ export default class Item extends Component {
                         </svg>
                     </UserButton>
                 </ButtonWraaper>
-
             </>
         )
     }
