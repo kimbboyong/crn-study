@@ -35,10 +35,10 @@ export default class Item extends Component {
         const results = this.judgement(this.choice[userChoice], computerChoice);
 
         this.setState({
-            userSelect: this.state.userSelect = this.choice[userChoice],
-            computerSelect: this.state.computerSelect = computerChoice,
-            result: this.state.result = results.userResult,
-            computerResult: this.state.computerResult = results.computerResult,
+            userSelect: this.choice[userChoice],
+            computerSelect: computerChoice,
+            result: results.userResult,
+            computerResult: results.computerResult,
         })
     }
 
