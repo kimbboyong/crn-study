@@ -11,7 +11,7 @@ const Item = styled.div`
 `
 
 const Title = styled.strong`
-    font-size: 20px;
+    font-size: 17px;
     color: #fff;
 `
 const WeatherImg = styled.figure`

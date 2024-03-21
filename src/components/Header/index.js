@@ -12,6 +12,7 @@ const List = styled.li`
     a {
         color: #fff;
         font-size: 20px;
+        font-weight: bold;
         opacity: .5;
     }
     &.active {
