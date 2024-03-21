@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
@@ -11,19 +12,32 @@ const List = styled.li`
     a {
         color: #fff;
         font-size: 20px;
-        opacity: 1;
-        font-weight: bold;
+        opacity: .5;
     }
- 
+    &.active {
+        a {
+            opacity:1;
+        }
+    }
+    &:hover {
+        a {
+            opacity:1;
+        }
+    }
 `
 
 
 const Header = () => {
 
+    const [active, setActive] = useState("/");
+
     return (
         <Wrapper>
-            <List>
-                <Link to="/">GLOBAL</Link>
+            <List onClick={() => { setActive('/') }} className={active === '/' ? 'active' : ''}>
+                <Link to="/">5DAYS</Link>
+            </List>
+            <List onClick={() => { setActive('/g') }} className={active === '/g' ? 'active' : ''}>
+                <Link to="/g">GLOBAL</Link>
             </List>
         </Wrapper>
     )

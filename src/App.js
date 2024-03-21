@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import CurrentPage from "./pages/CurrentPage";
 import { Route, Routes } from "react-router-dom";
 import Header from './components/Header';
 import GlobalPage from './pages/GlobalPage';
@@ -25,8 +26,10 @@ function App() {
     <Wrapper>
       <Inner>
         <Header />
+
         <Routes>
-          <Route path="/" element={<GlobalPage />} />
+          <Route path="/" element={<CurrentPage />} />
+          <Route path="/g" element={<GlobalPage />} />
         </Routes>
       </Inner>
     </Wrapper>

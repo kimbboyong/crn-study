@@ -39,17 +39,17 @@ const Temp = styled.span`
 `
 
 
-const Weather = ({ title, temp, img, imgAnimation }) => {
+const Weather = ({ title, temp, img, imgAnimation, strong, span }) => {
     return (
         <Wrapper>
             <Item>
-                <Title>
+                <Title style={strong}>
                     {title}
                 </Title>
                 <WeatherImg className={imgAnimation}>
                     <img src={`https://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
                 </WeatherImg>
-                <Temp>
+                <Temp style={span}>
                     {temp}°
                 </Temp>
             </Item>
