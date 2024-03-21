@@ -1,10 +1,37 @@
+import styled from 'styled-components';
+import { Route, Routes } from "react-router-dom";
+import Header from './components/Header';
+import GlobalPage from './pages/GlobalPage';
 
+
+const Wrapper = styled.div`
+    text-align: center;
+    background: linear-gradient(180deg, rgba(21,134,236,1) 20%, rgba(170,227,244,1) 100%);
+    height: 100vh;
+`
+const Inner = styled.div`
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+`
 function App() {
   return (
-    <div >
-      asd
-    </div>
+    <Wrapper>
+      <Inner>
+        <Header />
+        <Routes>
+          <Route path="/" element={<GlobalPage />} />
+        </Routes>
+      </Inner>
+    </Wrapper>
   );
+
 }
 
 export default App;
