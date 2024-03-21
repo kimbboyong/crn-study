@@ -11,19 +11,10 @@ const List = styled.li`
     a {
         color: #fff;
         font-size: 20px;
-        opacity: .5;
+        opacity: 1;
         font-weight: bold;
     }
-    &.active {
-        a {
-            opacity:1;
-        }
-    }
-    &:hover {
-        a {
-            opacity:1;
-        }
-    }
+ 
 `
 
 
