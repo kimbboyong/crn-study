@@ -49,7 +49,7 @@ const GlobalPage = () => {
                                 title={cityData?.name}
                                 img={cityData?.weather[0].icon}
                                 imgAnimation={"imgAnimation"}
-                                temp={cityData?.main.temp}
+                                temp={Math.floor(cityData?.main.temp)}
                             />
                         </>
                     )
