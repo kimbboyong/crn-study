@@ -17,10 +17,13 @@ li {
 }
 
 input[type="text"],
+input[type="button"],
 button {
     border: none;
     outline: none;
 }
+
+
 
 .Container {
     width: 100%;
