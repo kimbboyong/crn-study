@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import Search from "../Search";
 
@@ -14,9 +15,9 @@ const Sign = styled.div`
     display: flex;
     justify-content: end;
     margin-bottom: 30px;
-    span {
+    a {
         font-size: 18px;
-        color: 333;
+        color: #333;
     }
 
 `
@@ -43,6 +44,10 @@ const List = styled.div`
     li {
         cursor: pointer;
     }
+
+        @media screen and (max-width: 1080px) {
+            display: none;
+        }
 `
 
 
@@ -64,7 +69,7 @@ const Header = () => {
             <Inner>
                 <Search />
                 <Sign>
-                    <span>로그인</span>
+                    <Link to='/'>로그인</Link>
                 </Sign>
 
                 <Content>
