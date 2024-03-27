@@ -10,7 +10,7 @@ const Product = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:3004/products');
+            const response = await axios.get('https://my-json-server.typicode.com/kimbboyong/crn-study/products');
             setCardData(response.data);
         }
 
