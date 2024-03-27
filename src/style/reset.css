@@ -16,10 +16,13 @@ li {
     list-style: none;
 }
 
+em {
+    font-style: normal;
+}
+
 input[type="text"],
 input[type="button"],
 button {
-    border: none;
     outline: none;
 }
 
