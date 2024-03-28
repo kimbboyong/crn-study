@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-      <Header userInfo={userInfo} onLogOut={onLogOut} />
+      <Header authenticate={authenticate} userInfo={userInfo} onLogOut={onLogOut} />
       <Inner>
         <Routes>
           <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />

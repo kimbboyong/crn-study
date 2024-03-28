@@ -9,7 +9,8 @@ const UserForm = ({
     placePw,
     nameId,
     nameName,
-    namePw
+    namePw,
+    ButtonName
 }) => {
 
     const handleSubmit = (e) => {
@@ -25,6 +26,7 @@ const UserForm = ({
     };
 
     return (
+
         <Form onSubmit={handleSubmit}>
             <InputBox
                 type="text"
@@ -48,7 +50,7 @@ const UserForm = ({
                 placeholder={placePw}
                 onChange={onChange}
             />
-            <Button type="submit">로그인</Button>
+            <Button type="submit">{ButtonName}</Button>
         </Form>
     )
 }

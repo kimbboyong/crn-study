@@ -1,6 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import UserForm from '../../components/UserForm'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import UserForm from '../../components/UserForm';
+import { styled } from 'styled-components';
+
+const Title = styled.h2`
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+`
+
 
 const Mypage = () => {
     const [userData, setUserData] = useState({
@@ -24,6 +32,11 @@ const Mypage = () => {
     }
 
     const onSubmit = (formData) => {
+        if (userData.userid === '' || userData.username === '' || userData.userpw === '') {
+            alert('정보를 입력해주세요');
+            return;
+        }
+
         updateUser(formData);
         navigate('/')
         window.location.reload();
@@ -39,17 +52,21 @@ const Mypage = () => {
 
 
     return (
-        <UserForm
-            onSubmit={onSubmit}
-            onChange={onChange}
-            placeId={userData.userid}
-            placeName={userData.username}
-            placePw='새로운 비밀번호 입력해주세요.'
-            updateUser={updateUser}
-            nameId='userid'
-            nameName='username'
-            namePw="userpw"
-        />
+        <>
+            <Title>마이페이지</Title>
+            <UserForm
+                onSubmit={onSubmit}
+                onChange={onChange}
+                placeId={userData.userid}
+                placeName={userData.username}
+                placePw='새로운 비밀번호 입력해주세요.'
+                updateUser={updateUser}
+                nameId='userid'
+                nameName='username'
+                namePw="userpw"
+                ButtonName='수정하기'
+            />
+        </>
     )
 }
 

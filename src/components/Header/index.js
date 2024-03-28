@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Search from "../Search";
 import { Content, Inner, LinkWrapper, List, Log, Logo, Mypage, Sign, UserInfo, Wrapper } from "./style/index";
 
-const Header = ({ onLogOut, userInfo }) => {
+const Header = ({ authenticate, onLogOut, userInfo }) => {
     const menuList = [
         '여성',
         'Divided',
@@ -21,7 +21,7 @@ const Header = ({ onLogOut, userInfo }) => {
                 <Sign>
                     <>
                         {
-                            userInfo ? (
+                            authenticate ? (
                                 <LinkWrapper>
                                     <UserInfo>
                                         <span>{userInfo?.username}</span> 님
