@@ -1,11 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 
 const List = styled.li`
+    cursor: pointer;
     figure {
+        overflow: hidden;
         margin-bottom: 15px;
         img {
             max-width: 100%;
+            transition: all .4s;
         }
     }
 
@@ -21,12 +25,21 @@ const List = styled.li`
         font-weight: bold; 
     }
 
+    &:hover figure img {
+        transform: scale(1.1);
+    }
+
 `
 
 const ProductCard = ({ item }) => {
-    return (
+    const navigate = useNavigate();
 
-        <List>
+    const showDetail = () => {
+        navigate(`/produc/${item.id}`);
+    }
+
+    return (
+        <List onClick={showDetail}>
             <figure>
                 <img src={item?.img} alt="" />
             </figure>

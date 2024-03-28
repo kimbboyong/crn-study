@@ -1,57 +1,8 @@
-import { Link } from "react-router-dom";
-import { styled } from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 import Search from "../Search";
+import { Content, Inner, LinkWrapper, List, Log, Logo, Mypage, Sign, UserInfo, Wrapper } from "./style/index";
 
-const Wrapper = styled.div`
-    margin: 30px 0 50px;
-    position: relative;
-`
-
-const Inner = styled.div`
-    padding: 0 20px;
-`
-
-const Sign = styled.div`
-    display: flex;
-    justify-content: end;
-    margin-bottom: 30px;
-    a {
-        font-size: 18px;
-        color: #333;
-    }
-
-`
-
-const Content = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-`
-
-
-const Logo = styled.div`
-    max-width: 100px;
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-`
-const List = styled.div`
-    display: flex;
-    gap: 20px;
-    li {
-        cursor: pointer;
-    }
-
-        @media screen and (max-width: 1080px) {
-            display: none;
-        }
-`
-
-
-const Header = () => {
+const Header = ({ onLogOut, userInfo }) => {
     const menuList = [
         '여성',
         'Divided',
@@ -62,18 +13,42 @@ const Header = () => {
         'Sale',
         '지속가능성'
     ]
-
-
+    const navigate = useNavigate();
     return (
         <Wrapper>
             <Inner>
                 <Search />
                 <Sign>
-                    <Link to='/'>로그인</Link>
+                    <>
+                        {
+                            userInfo ? (
+                                <LinkWrapper>
+                                    <UserInfo>
+                                        <span>{userInfo?.username}</span> 님
+                                    </UserInfo>
+                                    <Mypage>
+                                        <Link to='/mypage'>마이페이지</Link>
+                                    </Mypage>
+                                    <Log onClick={onLogOut}>
+                                        로그아웃
+                                    </Log>
+                                </LinkWrapper>
+                            ) :
+                                (
+                                    <LinkWrapper>
+                                        <Log>
+                                            <Link to='/login'>로그인</Link>
+                                        </Log>
+                                    </LinkWrapper>
+                                )
+                        }
+
+                    </>
+
                 </Sign>
 
                 <Content>
-                    <Logo>
+                    <Logo onClick={() => { navigate('/') }}>
                         <img src="/images/logo.png" alt="" />
                     </Logo>
                     <List>
