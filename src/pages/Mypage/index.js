@@ -21,8 +21,8 @@ const Mypage = () => {
     }, []);
 
     const updateUser = (updatedUserData) => {
-        setUserData(updatedUserData); // 애플리케이션 상태 업데이트
-        localStorage.setItem('userInfo', JSON.stringify(updatedUserData)); // 로컬 스토리지에도 업데이트
+        setUserData(updatedUserData);
+        localStorage.setItem('userInfo', JSON.stringify(updatedUserData));
     }
 
     const onSubmit = (formData) => {
