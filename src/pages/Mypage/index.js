@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import UserForm from '../../components/UserForm'
 
 const Mypage = () => {
-
-
     const [userData, setUserData] = useState({
         userid: '',
         username: '',
