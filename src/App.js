@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, useSearchParams } from "react-router-dom";
 import { styled } from "styled-components";
 import Header from "./components/Header";
 import Login from "./pages/Login";
@@ -35,9 +35,16 @@ function App() {
     navigate('/login');
   }
 
+
+
+
   return (
     <>
-      <Header authenticate={authenticate} userInfo={userInfo} onLogOut={onLogOut} />
+      <Header
+        authenticate={authenticate}
+        userInfo={userInfo}
+        onLogOut={onLogOut}
+      />
       <Inner>
         <Routes>
           <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />

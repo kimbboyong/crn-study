@@ -2,6 +2,7 @@ import React from 'react'
 import { styled } from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from 'react-router-dom';
 const Form = styled.form`
     position: absolute;
     bottom: 0;
@@ -13,7 +14,12 @@ const Form = styled.form`
         transform: translateY(-50%);
     }
     @media screen and (max-width: 1080px) {
-        display: none;
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width:100%;
+        display:flex;
+        justify-content: center;
     }
 `
 
@@ -27,14 +33,27 @@ const Input = styled.input`
     &:placeholder {
         color: #ccc;
     }
+    @media screen and (max-width: 1080px) {
+        width: 100%;
+    }
 `
 
 
 const Search = () => {
+
+    const navigate = useNavigate();
+    const onKeyPress = (e) => {
+        const { value } = e.target;
+
+        if (e.code === 'Enter') {
+            navigate(`?q=${value}`);
+        }
+    }
+
     return (
-        <Form>
+        <Form onSubmit={(e) => { e.preventDefault() }}>
             <FontAwesomeIcon className='icon' icon={faSearch} />
-            <Input type="text" placeholder='검색' />
+            <Input type="text" placeholder='검색' onKeyPress={onKeyPress} />
         </Form>
     )
 }

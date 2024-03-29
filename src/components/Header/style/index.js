@@ -30,6 +30,7 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    margin-bottom: 30px;
 `
 
 
@@ -44,13 +45,15 @@ export const Logo = styled.div`
 `
 export const List = styled.div`
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     li {
         cursor: pointer;
     }
 
         @media screen and (max-width: 1080px) {
-            display: none;
+ 
         }
 `
 

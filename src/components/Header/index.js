@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Search from "../Search";
 import { Content, Inner, LinkWrapper, List, Log, Logo, Mypage, Sign, UserInfo, Wrapper } from "./style/index";
 
-const Header = ({ authenticate, onLogOut, userInfo }) => {
+const Header = ({ authenticate, onLogOut, userInfo, setQuery }) => {
     const menuList = [
         '여성',
         'Divided',
@@ -14,10 +14,12 @@ const Header = ({ authenticate, onLogOut, userInfo }) => {
         '지속가능성'
     ]
     const navigate = useNavigate();
+
+
     return (
         <Wrapper>
             <Inner>
-                <Search />
+
                 <Sign>
                     <>
                         {
@@ -59,6 +61,7 @@ const Header = ({ authenticate, onLogOut, userInfo }) => {
                         }
                     </List>
                 </Content>
+                <Search setQuery={setQuery} />
             </Inner>
         </Wrapper>
     )
