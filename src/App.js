@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate, useSearchParams } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import Header from "./components/Header";
 import Login from "./pages/Login";
@@ -24,7 +24,7 @@ function App() {
     const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
     if (storedUserInfo) {
       setAuthenticate(true);
-      setUserInfo(storedUserInfo)
+      setUserInfo(storedUserInfo);
     }
   }, [authenticate]);
 
@@ -34,9 +34,6 @@ function App() {
     setUserInfo({});
     navigate('/login');
   }
-
-
-
 
   return (
     <>

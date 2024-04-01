@@ -1,37 +1,31 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { Detail, Text, Button } from './style/index';
-
+import { productAction } from '../../redux/actions/productAction'
 const ProductDetail = () => {
 
     const param = useParams(null);
-
-    const [producData, setProducData] = useState();
+    const dispath = useDispatch();
+    const cardDetail = useSelector(state => state.product.cardDetail);
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await axios.get(`https://my-json-server.typicode.com/kimbboyong/crn-study/products/${param.id}`);
-                setProducData(response.data);
-            } catch (e) {
-                setProducData(e);
-            }
+            dispath(productAction.getProductDetail(param))
         }
         fetchData();
     }, [])
 
-    console.log(producData);
-
+    console.log(cardDetail);
     return (
         <Detail>
             <figure>
-                <img src={producData?.img} alt="" />
+                <img src={cardDetail?.img} alt="" />
             </figure>
             <Text>
                 <div>
-                    <strong>{producData?.title}</strong>
-                    <span>₩ {producData?.price}원</span>
+                    <strong>{cardDetail?.title}</strong>
+                    <span>₩ {cardDetail?.price}원</span>
                 </div>
                 <Button>추가</Button>
             </Text>

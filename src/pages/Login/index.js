@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import UserForm from '../../components/UserForm';
 import { styled } from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { authenticateAction } from '../../redux/actions/authenticateAction';
 
 const Title = styled.h2`
     text-align: center;
@@ -11,7 +13,7 @@ const Title = styled.h2`
 
 const Login = ({ setAuthenticate }) => {
     const navigate = useNavigate();
-
+    const dispath = useDispatch();
     const [users, setUsers] = useState({
         userid: '',
         username: '',
@@ -32,6 +34,7 @@ const Login = ({ setAuthenticate }) => {
             return;
         }
         localStorage.setItem('userInfo', JSON.stringify(formData));
+        dispath(authenticateAction.login(users));
         setAuthenticate(true);
         navigate('/');
     }

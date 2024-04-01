@@ -1,26 +1,22 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import ProductCard from "./ProductCard";
 
 import { Wrapper } from './style/index'
 import { useSearchParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { productAction } from "../../redux/actions/productAction";
 
 const Product = () => {
 
-    const [cardData, setCardData] = useState([]);
+    const cardData = useSelector(state => state.product.cardData);
     const [query, setQuery] = useSearchParams();
 
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = () => {
             const getQuery = query.get("q") || '';
-            try {
-                const response = await axios.get(`https://my-json-server.typicode.com/kimbboyong/crn-study/products?q=${getQuery}`);
-                setCardData(response.data);
-            } catch (e) {
-                console.log(e);
-            }
-
+            dispatch(productAction.getProducts(getQuery));
         }
         fetchData();
     }, [query])
