@@ -10,7 +10,6 @@ function productReducer(state = initialstate, action) {
         case "GET_PRODUCT_SUCCESS":
             return { ...state, cardData: payload.response.data };
         case "GET_PRODUCT_DETAIL_SUCCESS":
-            console.log(payload.response.data);
             return { ...state, cardDetail: payload.response.data };
         default:
             return { ...state };

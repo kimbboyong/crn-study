@@ -8,8 +8,6 @@ function authenticateReducer(state = initialstate, action) {
 
     switch (type) {
         case "LOGIN_SUCCESS":
-            console.log('login reducer');
-
             return { ...state, users: payload.users, authenticate: true };
         default:
             return { ...state };

@@ -3,7 +3,6 @@ import { Navigate } from 'react-router-dom'
 import ProductDetail from '../pages/Product/ProductDetail'
 
 const PrivateRoute = ({ authenticate }) => {
-    console.log(authenticate);
     return (
         <>
             {

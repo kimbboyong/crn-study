@@ -16,7 +16,6 @@ const ProductDetail = () => {
         fetchData();
     }, [])
 
-    console.log(cardDetail);
     return (
         <Detail>
             <figure>
