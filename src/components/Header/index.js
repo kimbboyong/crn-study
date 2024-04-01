@@ -11,7 +11,7 @@ const Header = ({ authenticate, onLogOut, userInfo, setQuery }) => {
         '아동',
         'H&M HOME',
         'Sale',
-        '지속가능성'
+        'redux'
     ]
     const navigate = useNavigate();
 
