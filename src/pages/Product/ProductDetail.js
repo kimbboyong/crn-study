@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { Detail, Text, Button } from './style/index';
-import { productAction } from '../../redux/actions/productAction'
+import { getSingleProducts } from '../../redux/reducer/productSlice';
 const ProductDetail = () => {
 
     const param = useParams(null);
@@ -11,10 +11,10 @@ const ProductDetail = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            dispath(productAction.getProductDetail(param))
+            dispath(getSingleProducts(param));
         }
         fetchData();
-    }, [])
+    }, [dispath, param]);
 
     return (
         <Detail>

@@ -11,7 +11,7 @@ const Header = ({ authenticate, onLogOut, userInfo, setQuery }) => {
         '아동',
         'H&M HOME',
         'Sale',
-        'redux'
+        'redux-toolkit'
     ]
     const navigate = useNavigate();
 
@@ -44,9 +44,7 @@ const Header = ({ authenticate, onLogOut, userInfo, setQuery }) => {
                                     </LinkWrapper>
                                 )
                         }
-
                     </>
-
                 </Sign>
 
                 <Content>
