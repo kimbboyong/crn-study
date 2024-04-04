@@ -10,7 +10,7 @@ const UserForm = ({
     nameId,
     nameName,
     namePw,
-    ButtonName
+    ButtonName,
 }) => {
 
     const handleSubmit = (e) => {
