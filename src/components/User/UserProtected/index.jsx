@@ -9,15 +9,14 @@ const UserProtected = ({ children }) => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
-      setLoading(false); // 인증 상태 확인 완료 시 로딩 상태 변경
+      setLoading(false);
     });
 
-    // 컴포넌트 언마운트 시 리스너 해제
     return () => unsubscribe();
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // 또는 로딩 인디케이터 컴포넌트
+    return <div>Loading...</div>;
   }
   if (!currentUser) {
     return <Navigate to="/login" />;
