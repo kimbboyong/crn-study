@@ -34,6 +34,7 @@ const Logo = styled.div`
   img {
     max-width: 100%;
     height: auto;
+    vertical-align: top;
   }
 `;
 const List = styled.div`
